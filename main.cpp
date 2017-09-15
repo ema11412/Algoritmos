@@ -8,35 +8,29 @@
 
 using namespace std;
 
-
-
+void Llenado(int A[],int t);
+void imprimir(int A[],int t);
 
 int main()
 {
     ///-------------------------BubbleSort-----------------------------------------------
     cout <<"---------------------BubbleSort-------------------"<< endl;
     cout <<""<< endl;
-
-    int a[] = {2,5,9,1,4,2};
-
-    cout <<"original"<< endl;
-    for (int i = 0 ; i <= 6-1; i++)
-        cout << a[i]<<" ";
-
-    cout <<""<< endl;
-    cout <<""<< endl;
-
-    clock_t cl = clock();
-    BubbleSort(a, 6);
-    cout <<"Tiempo : "<< (clock()-cl) << " ms" << endl;
-
-    cout <<""<< endl;
-    cout <<""<< endl;
-
-    cout <<"ordenado"<< endl;
-    for (int i = 0 ; i <= 6-1; i++)
-        cout << a[i]<<" ";
-
+	cout <<"Mejor caso"<< endl;
+	cout <<""<< endl;
+    for(int t = 10;t<400;t+=40){
+    	int a[t];
+    	Llenado(a,t);
+    	clock_t cl1 = clock();
+    	BubbleSort(a, t);
+    	clock_t t1 = clock();
+    	cout <<"Elementos: "<<t<<" Tiempo : "<< clock()-t1 << " ms" << endl;
+    	cout<<""<<endl;
+    	
+	}
+	
+    
+    
     cout <<""<< endl;
     cout <<""<< endl;
 
@@ -44,82 +38,59 @@ int main()
     cout <<"---------------------SelectionSort-------------------"<< endl;
     cout <<""<< endl;
 
-    int b[] = {2,5,9,1,4,2};
-
-    cout <<"original"<< endl;
-    for (int i = 0 ; i <= 6-1; i++)
-        cout << b[i]<<" ";
+    
+    //SelectionSort(b, 6);
+    cout <<"Tiempo : "<< ""<< " ms" << endl;
 
     cout <<""<< endl;
     cout <<""<< endl;
 
-    clock_t cl1 = clock();
-    SelectionSort(b, 6);
-    cout <<"Tiempo : "<< (clock()-cl1)<< " ms" << endl;
 
-    cout <<""<< endl;
-    cout <<""<< endl;
-
-    cout <<"ordenado"<< endl;
-    for (int i = 0 ; i <= 6-1; i++)
-        cout << b[i]<<" ";
-    cout <<""<< endl;
-    cout <<""<< endl;
 
 
 ///------------------------------InsertionSort-----------------------------------------------
     cout <<"---------------------InsertionSort-------------------"<< endl;
     cout <<""<< endl;
 
-    int c[] = {9,5,55,1,2,91};
-
-    cout <<"original"<< endl;
-    for (int i = 0 ; i <= 6-1; i++)
-        cout << c[i]<<" ";
+    
+    //Insertion(c, 6);
+    cout <<"Tiempo : "<<  ""<< " ms" << endl;
 
     cout <<""<< endl;
     cout <<""<< endl;
 
-    clock_t cl2 = clock();
-    Insertion(c, 6);
-    cout <<"Tiempo : "<< (clock()-cl2) << " ms" << endl;
-
-    cout <<""<< endl;
-    cout <<""<< endl;
-
-    cout <<"ordenado"<< endl;
-    for (int i = 0 ; i <= 6-1; i++)
-        cout << c[i]<<" ";
-    cout <<""<< endl;
-    cout <<""<< endl;
+   
 
 
 ///------------------------------MergeSort-----------------------------------------------
     cout <<"---------------------MergeSort-------------------"<< endl;
     cout <<""<< endl;
 
-    int d[] = {9,5,55,1,2,91};
-    int sorted[6];
-    cout <<"original"<< endl;
-    for (int i = 0 ; i <= 6-1; i++)
-        cout << d[i]<<" ";
+    
+    //mergesort(d, d + 6, sorted);
+    cout <<"Tiempo : "<<  ""<< " ms" << endl;
 
     cout <<""<< endl;
     cout <<""<< endl;
 
-    clock_t cl3 = clock();
-    mergesort(d, d + 6, sorted);
-    cout <<"Tiempo : "<< (clock()-cl3) << " ms" << endl;
-
-    cout <<""<< endl;
-    cout <<""<< endl;
-
-    cout <<"ordenado"<< endl;
-    for (int i = 0 ; i <= 6-1; i++)
-        cout << sorted[i]<<" ";
-    cout <<""<< endl;
-    cout <<""<< endl;
+    
 
 
     return 0;
+}
+    
+void Llenado (int A[],int t) 
+{
+
+for(int i = 0 ; i < t; i++)
+	 A[i]=i;
+
+}
+
+void imprimir(int A[],int t){
+	cout <<"Arreglo"<< endl;
+	for (int i = 0 ; i <= t-1; i++)
+        cout << A[i]<<" ";
+    cout <<""<< endl;
+    cout <<""<< endl;
 }
